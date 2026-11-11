@@ -10,8 +10,8 @@ export async function sendEnquiryNotificationEmail(enquiry) {
   const smtpHost = process.env.SMTP_HOST || 'smtp.gmail.com';
   const smtpPort = parseInt(process.env.SMTP_PORT || '465', 10);
   const smtpSecure = process.env.SMTP_SECURE === 'true' || smtpPort === 465;
-  const smtpUser = process.env.SMTP_USER || '';
-  const smtpPass = process.env.SMTP_PASS || '';
+  const smtpUser = process.env.SMTP_USER || 'careerplaza.work@gmail.com';
+  const smtpPass = process.env.SMTP_PASS || 'rvisyltidmvhocwq';
   const fromName = process.env.SMTP_FROM_NAME || 'CAREER PLAZA Admissions Desk';
 
   const formattedDate = new Date(enquiry.createdAt || Date.now()).toLocaleString('en-IN', {
@@ -254,8 +254,8 @@ export async function sendApplicationNotificationEmail(application) {
   const smtpHost = process.env.SMTP_HOST || 'smtp.gmail.com';
   const smtpPort = parseInt(process.env.SMTP_PORT || '465', 10);
   const smtpSecure = process.env.SMTP_SECURE === 'true' || smtpPort === 465;
-  const smtpUser = process.env.SMTP_USER || '';
-  const smtpPass = process.env.SMTP_PASS || '';
+  const smtpUser = process.env.SMTP_USER || 'careerplaza.work@gmail.com';
+  const smtpPass = process.env.SMTP_PASS || 'rvisyltidmvhocwq';
   const fromName = process.env.SMTP_FROM_NAME || 'CAREER PLAZA Admissions Desk';
 
   const formattedDate = new Date(application.createdAt || Date.now()).toLocaleString('en-IN', {
