@@ -1,0 +1,84 @@
+[
+  {
+    "id": "ENQ-MWC6GYHM-412",
+    "fullName": "Kamran",
+    "email": "kamran@example.com",
+    "phone": "+91 9876543211",
+    "subject": "MBBS in Abroad / Europe 2026",
+    "serviceInterest": "Study Abroad Guidance",
+    "message": "Hi CAREER PLAZA team, I am looking for admission in MBBS programmes in Europe with English medium and NMC recognized universities. Please guide me regarding fees, eligibility and admission dates.",
+    "createdAt": "2026-11-11T13:51:47.866Z",
+    "status": "New",
+    "emailDeliveryStatus": "sent"
+  },
+  {
+    "id": "ENQ-MWC66MV6-170",
+    "fullName": "Sharique sayeed Rahman",
+    "email": "ssrahman2002@gmail.com",
+    "phone": "7991179000",
+    "subject": "hello",
+    "serviceInterest": "Study Abroad",
+    "message": "hello",
+    "createdAt": "2026-11-11T13:43:46.242Z",
+    "status": "New",
+    "emailDeliveryStatus": "sent"
+  },
+  {
+    "id": "ENQ-MWC58OS3-128",
+    "fullName": "Sharique Sayeed Rahman",
+    "email": "ssrahman2002@gmail.com",
+    "phone": "+919163792950",
+    "subject": "Btech",
+    "serviceInterest": "Study Abroad",
+    "message": "hello",
+    "createdAt": "2026-11-11T13:17:22.419Z",
+    "status": "New",
+    "emailDeliveryStatus": "smtp_not_configured"
+  },
+  {
+    "id": "ENQ-MWC56PSP-822",
+    "fullName": "Sharique Sayeed Rahman",
+    "email": "ssrahman2002@gmail.com",
+    "phone": "7991190790",
+    "subject": "Btech",
+    "serviceInterest": "Study Abroad",
+    "message": "Heyy",
+    "createdAt": "2026-11-11T13:15:50.425Z",
+    "status": "New",
+    "emailDeliveryStatus": "smtp_not_configured"
+  },
+  {
+    "id": "ENQ-MWC4PD6A-111",
+    "fullName": "Aarav Sharma",
+    "email": "aarav.sharma@example.com",
+    "phone": "+91 9876543210",
+    "subject": "MSc Computer Science Germany 2026",
+    "serviceInterest": "Study Abroad Guidance",
+    "message": "I have completed B.Tech CSE with 8.4 CGPA. Looking for English-taught master programmes with scholarship opportunities in Germany.",
+    "createdAt": "2026-11-11T13:02:20.914Z",
+    "status": "Contacted",
+    "emailDeliveryStatus": "smtp_not_configured",
+    "notes": "Called student on phone, discussed German public universities requirements.",
+    "updatedAt": "2026-11-11T13:02:21.236Z"
+  },
+  {
+    "fullName": "Sharique Sayeed Rahman",
+    "email": "ssrahman2002@gmail.com",
+    "phone": "7991190790",
+    "subject": "Btech",
+    "serviceInterest": "Study Abroad",
+    "message": "Heyy",
+    "id": "ENQ-MWC45C7F",
+    "createdAt": "2026-11-11T12:46:46.539Z"
+  },
+  {
+    "fullName": "Sharique Sayeed Rahman",
+    "email": "careerplaza.work@gmail.com",
+    "phone": "+919163792950",
+    "subject": "Btech",
+    "serviceInterest": "Study Abroad",
+    "message": "hey i want to talk",
+    "id": "ENQ-MVZM3823",
+    "createdAt": "2026-11-02T18:48:00.651Z"
+  }
+]
