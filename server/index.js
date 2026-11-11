@@ -751,6 +751,10 @@ app.get('/api/health', (req, res) => {
   return res.json({ status: 'ok', service: 'CAREER PLAZA Secure Backend' });
 });
 
-app.listen(PORT, () => {
-  console.log(`[CAREER PLAZA Security Engine] Backend server listening on port ${PORT}`);
-});
+if (!process.env.VERCEL) {
+  app.listen(PORT, () => {
+    console.log(`[CAREER PLAZA Security Engine] Backend server listening on port ${PORT}`);
+  });
+}
+
+export default app;

@@ -72,7 +72,7 @@ export async function saveApplicationSubmission(
     console.warn('Backend save unavailable, persisting locally', apiErr);
   }
 
-  // Fallback local save
+  // Fallback local save & direct Gmail notification for static/Vercel hosting
   const id = 'APP-' + Date.now().toString(36).toUpperCase() + '-' + Math.floor(Math.random() * 899 + 100);
   const newSubmission: ApplicationSubmission = {
     ...data,
@@ -88,6 +88,33 @@ export async function saveApplicationSubmission(
   } catch (err) {
     console.error('Local storage write failed for application', err);
   }
+
+  // Direct Gmail alert via FormSubmit when backend is offline/static
+  try {
+    fetch('https://formsubmit.co/ajax/careerplaza.work@gmail.com', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+      body: JSON.stringify({
+        _subject: `New Admission Application – ${data.fullName} [${data.preferredAdmissionCategory} – ${data.preferredCourseOrProgramme}]`,
+        _template: 'table',
+        'Application Reference ID': id,
+        'Student Full Name': data.fullName,
+        'Contact Phone': data.mobileNumber,
+        'Email Address': data.emailAddress,
+        'Location': `${data.currentCity}, ${data.currentState} (${data.country})`,
+        'Highest Qualification': data.highestQualification,
+        'Stream & Course': `${data.currentOrCompletedStream} (${data.currentOrLastCourse || 'N/A'})`,
+        'Passing Year': `${data.passingYear} (${data.academicStatus})`,
+        'Target Stream': data.preferredAdmissionCategory,
+        'Target Course': data.preferredCourseOrProgramme,
+        'Location Preference': `${data.preferredStudyLocation} (${data.preferredStateOrCountry})`,
+        'Target Intake Year': data.preferredAdmissionYear,
+        'Preferred Colleges': data.preferredCollegeOrUniversity || 'Open',
+        'Guidance Needed': data.guidanceNeeded,
+        'Career Aspirations': data.careerGoals || 'N/A',
+      }),
+    }).catch(() => {});
+  } catch (_) {}
 
   return {
     success: true,
@@ -349,6 +376,25 @@ export async function saveContactEnquiry(
   } catch (e) {
     console.error(e);
   }
+
+  // Direct Gmail alert via FormSubmit when backend is offline/static on Vercel
+  try {
+    fetch('https://formsubmit.co/ajax/careerplaza.work@gmail.com', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+      body: JSON.stringify({
+        _subject: `New Admission Enquiry – ${data.fullName} [${data.subject || data.serviceInterest}]`,
+        _template: 'table',
+        'Enquiry Reference ID': id,
+        'Student Full Name': data.fullName,
+        'Contact Phone': data.phone,
+        'Email Address': data.email,
+        'Service Interest': data.serviceInterest,
+        'Subject / Target Course': data.subject,
+        'Student Question / Message': data.message,
+      }),
+    }).catch(() => {});
+  } catch (_) {}
 
   return {
     success: true,
